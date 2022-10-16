@@ -1,12 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+    <link rel="stylesheet" href="CSS/CSS.css">
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
+
+    <section>
+        <form action="PHP/Login.php" method="post">
+            <H1>Login</H1><br>
+            
+            <input type="text" name="Correo" placeholder="Correo"><br>
+            <input type="password" name="Contraseña" placeholder="Contraseña"><br>
+	        
+            <input type="submit" value="Login">
+            
+
+        </form>
+
+
+        <form action="PHP/Registrar.php" method="post">
     
+            <H1>Registro</H1><br>
+
+            <input type="text" name="Correo" placeholder="Correo" maxlength="30"><br>
+            <input type="password" name="Contraseña" placeholder="Contraseña" maxlength="20"><br>
+            <input type="text" name="Nombre" placeholder="Nombre"><br>
+            <label for="Nacimiento">Nacimiento</label><br>
+            <input type="date" name="Nacimiento"><br>
+
+            <input type="submit" value="Registro">
+
+        </form>
+
+    </section>    
+
+    <form action="" method="post">
+    
+        <H1></H1>
+    </form>
+
 </body>
 </html>
