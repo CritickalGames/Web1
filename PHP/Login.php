@@ -1,6 +1,7 @@
 <?php
 
-require 'Conexion.php';
+require_once "Modelo/MRegistrados.php";
+
 
 $correo = strtoupper($_POST['Correo']);
 $contra = $_POST['Contraseña'];
@@ -8,14 +9,17 @@ $contra = $_POST['Contraseña'];
 
 /***** */
 
-    $sql="SELECT * from registrado where (Correo, Contraseña) = ('$correo','$contra')";
-    $result=mysqli_query($conexion,$sql);
-    $mostrar=mysqli_fetch_array($result);
+    $obj = new ModeloPersona();
+    $mostrar=$obj->getPersona($correo, $contra);
 
-    $mostrar['IdAnime']
+    if ($mostrar['Correo']==$correo && $mostrar['Contraseña']==$contra) {
+        //echo $mostrar['Correo'];
+        header("Location: ./../HTML/PaginaDeInicio.html");
+    }
+    
 
-    echo "<br><center><h1>".$conrreo."</h1></center>";
-    echo $sql;
+    echo "<br><center><h1>".$correo."</h1></center>";
+
 
 /***** */
 ?>
